@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: org.example.Main
+Class-Path: libs/kafka-streams-3.7.0.jar libs/kafka-clients-3.7.0.jar li
+ bs/slf4j-api-2.0.12.jar libs/logback-core-1.4.14.jar libs/jackson-core-
+ 2.16.0.jar libs/jackson-databind-2.16.0.jar libs/jackson-annotations-2.
+ 16.0.jar libs/rocksdbjni-7.9.2.jar libs/zstd-jni-1.5.5-6.jar libs/lz4-j
+ ava-1.8.0.jar libs/snappy-java-1.1.10.5.jar
+
