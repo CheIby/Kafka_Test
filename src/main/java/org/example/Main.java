@@ -22,5 +22,17 @@ public class Main {
         final Topology topology = builder.build();
         final KafkaStreams streams = new KafkaStreams(topology, props);
         streams.start();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            streams.close();
+        }));
+
+        try {
+            // Keep the main thread alive by blocking indefinitely
+            Thread.currentThread().join();
+        } catch (InterruptedException e) {
+            // Handle the interrupted exception
+            e.printStackTrace();
+        }
     }
 }
