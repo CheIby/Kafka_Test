@@ -15,8 +15,7 @@ public class Main {
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         final StreamsBuilder builder = new StreamsBuilder();
         builder.stream("streams-filter-input", Consumed.with(Serdes.String(), Serdes.String()))
-                .filter((key, value) -> value.length() > 5)
-                .mapValues(((readOnlyKey, value) -> value.toUpperCase()))
+                .filter((key, value) -> Integer.parseInt(value) > 100)
                 .to("streams-filter-output", Produced.with(Serdes.String(), Serdes.String()));
 
         final Topology topology = builder.build();
